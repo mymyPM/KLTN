@@ -16,5 +16,10 @@ class Users{
                 VALUES (3,'$fullname','$username',md5('$password'),'$email','$sdt')";
         return $this->da->ExecuteQuery($sql);
     }
+    function getUser()
+    {
+        $sql = "SELECT * FROM admin";
+        return $this->da->FetchAll($sql);
+    }
 
 }

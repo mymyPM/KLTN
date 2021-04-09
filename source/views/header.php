@@ -1,4 +1,8 @@
-
+<?php
+    session_start();
+    ob_start();
+    //error_reporting(0);
+?>
 <!DOCTYPE HTML>
 <html>
 <head>

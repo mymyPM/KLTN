@@ -1,4 +1,5 @@
-		<div id="page-wrapper">
+
+	<div id="page-wrapper">
 			<div class="main-page login-page ">
 				<h2 class="title1">Login</h2>
 				<div class="widget-shadow">

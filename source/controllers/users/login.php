@@ -16,6 +16,7 @@ if(isset($_POST["btnLogin"]))
             $_SESSION["username"]=$username;
             $_SESSION["userID"]=$result["ID"];
             $_SESSION["GroupID"]=$result["GroupID"];
+            $_SESSION["Name"]=$result["Name"];
             header("location:index.php");
         }
         else

@@ -1,7 +1,7 @@
 <?php
 require("source/views/header.php");
-require("source/views/left_nav.php");
-	require("source/views/head_nav.php");
+require("source/views/users/left_nav.php");
+	require("source/views/users/head_nav.php");
 ?>
 <?php
 if(isset($_GET['mod']))

@@ -6432,7 +6432,7 @@ h4.asd label {
 		font-size: 0.9em;
 	}
 	.header-left {
-		margin-left: 18%;
+		margin-left: 17%;
 	}
 	.r3_counter_box .fa {
 		font-size: 23px;
@@ -8018,7 +8018,8 @@ h4.asd label {
 	}
 	.user-name {
 		margin-top: 5px;
-		margin-left: 8px;
+    margin-left: 8px;
+    
 	}
 	.profile_details li a i.fa.lnr {
 		top: 8%;

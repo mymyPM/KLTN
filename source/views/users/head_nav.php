@@ -40,7 +40,7 @@
 										<p>
 										<?php echo $_SESSION["Name"]?>
 										</p>
-										<span>Administrator</span>
+										<span>Lecturer</span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
 									<i class="fa fa-angle-up lnr"></i>
@@ -51,7 +51,7 @@
 								<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
 								<li> <a href="#"><i class="fa fa-user"></i> My Account</a> </li> 
 								<li> <a href="#"><i class="fa fa-suitcase"></i> Profile</a> </li> 
-								<li><a href="admin.php?mod=users&act=logout" ><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a> </li>
+								<li><a href="pesonal.php?mod=users&act=logout" ><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a> </li>
 							</ul>
 						</li>
 					</ul>
