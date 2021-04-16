@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 09, 2021 lúc 11:33 AM
--- Phiên bản máy phục vụ: 10.4.17-MariaDB
--- Phiên bản PHP: 8.0.1
+-- Thời gian đã tạo: Th4 07, 2021 lúc 08:36 PM
+-- Phiên bản máy phục vụ: 10.4.18-MariaDB
+-- Phiên bản PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,14 +35,6 @@ CREATE TABLE `admin` (
   `Password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `admin`
---
-
-INSERT INTO `admin` (`ID`, `GroupID`, `Name`, `Username`, `Password`) VALUES
-(1, 1, 'Phan Ngoc My', 'ngocmyy.phan@gmail.com', '17ccdf2bff481f9eab342202cc80801e'),
-(2, 2, 'My', 'My@gmail.com', '17ccdf2bff481f9eab342202cc80801e');
-
 -- --------------------------------------------------------
 
 --
@@ -67,16 +59,8 @@ CREATE TABLE `approved` (
 CREATE TABLE `classify` (
   `ID` int(11) NOT NULL,
   `Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Time_norms` float NOT NULL
+  `Time_norms` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `classify`
---
-
-INSERT INTO `classify` (`ID`, `Name`, `Time_norms`) VALUES
-(1, 'Giảng viên tập sự', 0),
-(2, 'Giảng viên mới, năm thứ nhất', 50);
 
 -- --------------------------------------------------------
 
@@ -104,14 +88,6 @@ CREATE TABLE `groups` (
   `GroupName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `groups`
---
-
-INSERT INTO `groups` (`ID`, `GroupName`) VALUES
-(1, 'Admin'),
-(2, 'Lecturer');
-
 -- --------------------------------------------------------
 
 --
@@ -128,13 +104,6 @@ CREATE TABLE `lecturers` (
   `ClassifyID` int(11) NOT NULL,
   `Time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `lecturers`
---
-
-INSERT INTO `lecturers` (`ID`, `Name`, `Birthday`, `Phone`, `Email`, `Address`, `ClassifyID`, `Time`) VALUES
-(1, 'T', '1999-11-04', '0852335598', 'aa@gmail.com', '123 NTS', 1, '2021-04-08 13:55:58');
 
 -- --------------------------------------------------------
 
@@ -184,17 +153,10 @@ CREATE TABLE `scientific_research` (
 CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
   `GroupID` int(11) NOT NULL,
-  `LectureID` int(11) DEFAULT NULL,
+  `LectureID` int(11) NOT NULL,
   `Username` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `user`
---
-
-INSERT INTO `user` (`ID`, `GroupID`, `LectureID`, `Username`, `Password`) VALUES
-(2, 2, NULL, 'Thien', 'fcea920f7412b5da7be0cf42b8c93759');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -280,7 +242,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `approved`
@@ -292,7 +254,7 @@ ALTER TABLE `approved`
 -- AUTO_INCREMENT cho bảng `classify`
 --
 ALTER TABLE `classify`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `exemption`
@@ -304,13 +266,13 @@ ALTER TABLE `exemption`
 -- AUTO_INCREMENT cho bảng `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `lecturers`
 --
 ALTER TABLE `lecturers`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `reason`
@@ -334,7 +296,7 @@ ALTER TABLE `scientific_research`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

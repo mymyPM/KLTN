@@ -1,0 +1,14 @@
+@CHARSET "utf-8";
+.carousel{
+    z-index: 1;
+}
+
+/*ThuanPV */
+
+/*Custom form control*/
+.form-control
+{
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}

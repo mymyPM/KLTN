@@ -1,0 +1,126 @@
+/*
+ * Common Style
+*/
+
+/* Link detail */
+a.detail
+{
+    background: #EC1C24;
+    color: white;
+    padding: 0 6px;
+    font-size: 12px;
+}
+
+/* button white*/
+a.btn-white
+{
+    background: url("../image/r-l-button-white.png") center right #ffffff no-repeat;
+    height: 18px;
+    padding: 3px 25px 3px 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+
+    /*-webkit-transition: .2s, filter;
+    -moz-transition: .2s, filter;
+    transition: .2s, filter;
+    -webkit-transition: .2s -webkit-filter linear;
+    opacity: 1*/
+}
+a.btn-white span {
+    color: #555A60;
+    font-weight: bold;
+    padding-right: 4px;
+    font-family: "Myriad Pro Regular";
+}
+a.btn-white:hover
+{
+    background: url("../image/btn-detail-hover.png") center right #ea2127 no-repeat;
+    /*opacity: 0.9;
+    -webkit-filter: brightness(120%) contrast(120%);
+    filter: brightness(120%) contrast(120%)*/
+}
+
+a.btn-white:hover span
+{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding-right: 4px;
+    font-family: "Myriad Pro Regular";
+}
+/* end button white*/
+
+
+/* button grey*/
+a.btn-grey
+{
+    background: url("../image/r-l-button-grey.png") center right #ffffff no-repeat;
+    height: 18px;
+    padding: 3px 25px 3px 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+
+    /*-webkit-transition: .2s, filter;
+    -moz-transition: .2s, filter;
+    transition: .2s, filter;
+    -webkit-transition: .2s -webkit-filter linear;
+    opacity: 1*/
+}
+a.btn-grey span{
+    color: #555A60;
+    font-weight: bold;
+    padding-right: 4px;
+    font-family: "Myriad Pro Regular";
+}
+
+a.btn-grey:hover
+{
+    /*opacity: 0.9;
+    -webkit-filter: brightness(110%) contrast(110%);
+    filter: brightness(110%) contrast(110%);*/
+    background: url("../image/btn-detail-hover.png") center right #ffffff no-repeat;
+}
+
+a.btn-grey:hover span{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding-right: 4px;
+    font-family: "Myriad Pro Regular";
+}
+/* end button grey*/
+
+/* Image hover effect */
+.e-c-main img, .logo-left img, #hot-new img, .img-lighter img {
+    -webkit-transition: .3s, filter;
+    -moz-transition: .3s, filter;
+    transition: .3s, filter;
+    -webkit-transition: .3s -webkit-filter linear;
+    opacity: 1
+}
+
+.e-c-main img:hover, .logo-left img:hover, #hot-new img:hover, .img-lighter img:hover, .content-img img:hover  {
+    opacity: 0.9;
+    -webkit-filter: brightness(110%) contrast(110%);
+    filter: brightness(110%) contrast(110%)
+}
+
+/*Grey scale*/
+
+img.grayscale{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);  /* For Webkit browsers */
+    filter: gray;  /* For IE 6 - 9 */
+    -webkit-transition: all .3s ease;  /* Transition for Webkit browsers */
+    -webkit-transition: .3s, ease;
+    -moz-transition: .3s, ease;
+    transition: .3s, ease;
+}
+
+img.grayscale:hover{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    filter: none;
+}
+
+/* End Image hover effect */

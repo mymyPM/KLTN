@@ -1,0 +1,21 @@
+/*
+APP3S
+Author  :   tuanlm
+Date    :   08, 12, 2015
+*/
+/* 
+    Created on : Dec 8, 2015, 1:36:45 PM
+    Author     : tuanlm
+*/
+
+@media print {
+    a[href]:after {
+        content: none !important;
+    }
+    .content-left{
+        display: none;
+    }
+    .btn-expand{
+        display: none;
+    }
+}
