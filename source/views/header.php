@@ -30,7 +30,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
  <!-- js-->
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/modernizr.custom.js"></script>
-
+<script>src="js/function1.js"</script>
 <!--webfonts-->
 <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 <!--//webfonts--> 

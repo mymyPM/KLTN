@@ -20,7 +20,7 @@
 				
 				<!--search-box-->
 				<div class="search-box">
-					<form class="input">
+					<form class="input" action="index.php?mod=users&act=search">
 						<input class="sb-search-input input__field--madoka" placeholder="Search..." type="search" id="input-31" />
 						<label class="input__label" for="input-31">
 							<svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
@@ -35,7 +35,7 @@
 						<li class="dropdown profile_details_drop">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<div class="profile_img">	
-									<span class="prfil-img"><img src="images/<?php echo $_SESSION["img"]?>" alt=""> </span> 
+									<span class="prfil-img"><img src="images/<?php echo $_SESSION["Img"]?>" width="50px" height="50px" alt=""> </span> 
 									<div class="user-name">
 										<p>
 										<?php echo $_SESSION["Name"]?>

@@ -3,7 +3,7 @@
 		private $link;//bien ket noi csdl
 		function __construct()
 		{
-			$this->link=mysqli_connect("localhost","root","","ql_nckh");
+			$this->link=mysqli_connect("localhost","root","","ql_nckh_v3");
 		}
 		function ExecuteQuery($sql)
 		{

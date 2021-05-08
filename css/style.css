@@ -108,6 +108,27 @@ button#showLeftPush {
 button#showLeftPush:hover {
     color: #eee;
 }
+/*input*/
+input#showLeftPush {
+  font-size: 1.1em;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+  color: #fff;
+  -moz-transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+border: none;
+  background-color: #F2B33F;
+outline:none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-top: 11px;
+}
+input#showLeftPush:hover {
+  color: #eee;
+}
 /*--push-menu-css--*/
 .cbp-spmenu {
 	position: fixed;

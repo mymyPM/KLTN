@@ -22,7 +22,7 @@
                 </a>
               </li>
 			  <li class="treeview">
-                <a href="admin.php?mod=users&act=manage">
+                <a href="admin.php?mod=lecturer&act=manage">
                 <i class="fa fa-laptop"></i>
                 <span>Quản lý thành viên</span>
                 </a>
