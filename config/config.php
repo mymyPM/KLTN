@@ -7,7 +7,7 @@
 		}
 		else
 		{
-            mysqli_select_db($con,"ql_nckh");
+            mysqli_select_db($con,"ql_nckh_v3");
 			mysqli_query($con,"SET NAME UTF8");
 			echo "Connected...";
 			return $con;

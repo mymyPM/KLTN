@@ -41,7 +41,7 @@
 								<div class="form-group">
 									<label for="selector1" class="col-sm-2 control-label">Authorization:</label>
 									<div class="col-sm-8"><select name="txtAuthor" id="txtAuthor" class="form-control1">
-										<option value="1">Admin.</option>
+										<option value="1">Admin</option>
 										<option value="2">Lecturer</option>
 									</select></div>
 								</div>
