@@ -29,6 +29,11 @@ class Users{
         $sql = "SELECT * FROM admin WHERE Name like '%$name%'";
         return $this->da->FetchAll($sql);
     }
+    function getUserById($id)
+    {
+        $sql = "SELECT * FROM admin WHERE ID=$id";
+        return $this->da->Fetch($sql);
+    }
     function countAccount()
     {
         $sql = "SELECT ID FROM admin";
@@ -43,7 +48,7 @@ class Users{
     }
     function updateUser($id,$g,$name,$username,$password,$img)
     {
-        $sql = "UPDATE admin SET GroupID=$g,Name=$name,Username=$username,Password=$password,Img=$img
+        $sql = "UPDATE admin SET GroupID=$g,Name='$name',Username='$username',Password='$password',Img='$img'
                 WHERE ID=$id ";
         return $this->da->ExecuteQuery($sql);
     }
