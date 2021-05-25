@@ -41,12 +41,12 @@
                 </a>
               </li>
 			  <li>
-                <a href="admin.php?mod=request&act=list_request">
+                <a href="admin.php?mod=request&act=plan">
                 <i class="fa fa-th"></i> <span>Thiết lập đợt xét</span>
                 </a>
               </li>
               <li class="treeview">
-                <a href="#">
+                <a href="admin.php?mod=request&act=list_request">
                 <i class="fa fa-edit"></i> <span>Yêu cầu miễn giảm</span>
                 </a>
               </li>
@@ -66,8 +66,14 @@
                 </a>
               </li>
               <li class="treeview">
-                <a href="#">
+                <a href="admin.php?mod=request&act=exemption_type">
                 <i class="fa fa-folder"></i> <span>Quản lý loại miễn giảm</span>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="admin.php?mod=users&act=account">
+                <i class="fa fa-pie-chart"></i>
+                <span>Quản lý hoạt động NCKH</span>
                 </a>
               </li>
             </ul>
