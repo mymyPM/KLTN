@@ -5,14 +5,6 @@
 		include_once("source/models/users.php");
 		$user = new Users;
 		$result = $user->getUserById($id);
-		if($result["GroupID"]==1)
-		{
-			$author = "Admin";
-		}
-		else
-		{
-			$author = "Lecturer";
-		}
 		?>
 		<div id="page-wrapper">
 			<div class="main-page">
@@ -21,7 +13,7 @@
                             <div style="float:right"><a href="admin.php?mod=users&act=account"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a></div>
                         </h3>
 						<div class="form-three widget-shadow">
-							<form class="form-horizontal" action="admin.php?mod=users&act=edit&id=<?php echo $id ?>" method="POST" >
+							<form class="form-horizontal" action="admin.php?mod=users&act=edit&id=<?php echo $id ?>" method="POST"  >
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Name: </label>
 									<div class="col-sm-8">
@@ -43,7 +35,7 @@
                                 <div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Password: </label>
 									<div class="col-sm-8">
-										<input type="text" value="<?php echo $result["Password"]?>" class="form-control1" name="txtPassword" id="txtPassword" placeholder="Default Input">
+										<input type="password" value="<?php echo $result["Password"]?>" class="form-control1" name="txtPassword" id="txtPassword" placeholder="Default Input">
 									</div>
 									<div class="col-sm-2">
 										<p class="help-block">Nhập password!</p>
@@ -51,14 +43,24 @@
 								</div>
 								<div class="form-group">
 									<label for="selector1" class="col-sm-2 control-label">Authorization:</label>
-									<div class="col-sm-8"><select name="txtAuthor" id="txtAuthor" class="form-control1" >
-									<option selected="selected" value="<?php echo $result["GroupID"];?>" ><?php echo $author?></option>
+									<div class="col-sm-8">
+									<select name="txtAuthor" id="txtAuthor" class="form-control1" >
+									
 									<?php
-									if($result["GroupID"]==2)
-										echo "<option value=\"1\">Admin</option>";
-									else	
-										echo "<option value=\"2\">Lecturer</option>"
+										if($result["GroupID"]==1)
+										{
+											echo "<option selected=\"selected\" value=\"1\">Admin</option>";
+											echo "<option value=\"2\">Lecturer</option>";
+										}
+										else
+										{
+											echo "<option value=\"1\">Admin</option>";
+											echo "<option selected=\"selected\" value=\"2\">Lecturer</option>";
+										}
 									?>
+									
+									
+									
 									</select></div>
 								</div>
                                 <div class="form-group"> 
