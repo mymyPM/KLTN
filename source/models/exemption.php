@@ -7,17 +7,17 @@ class Exemption{
     }
     function getExemption()
     {
-        $sql = "SELECT * FROM admin";
+        $sql = "SELECT * FROM exemption_type";
         return $this->da->FetchAll($sql);
     }
     function getExemptionById($id)
     {
-        $sql = "SELECT * FROM admin WHERE ID=$id";
+        $sql = "SELECT * FROM exemption_type WHERE ID=$id";
         return $this->da->ExecuteQuery($sql);
     }
     function getExemptionByName($name)
     {
-        $sql = "SELECT Username FROM admin WHERE Name=$name";
+        $sql = "SELECT Name FROM exemption_type WHERE Name=$name";
         return $this->da->ExecuteQuery($sql); 
     }
 }
