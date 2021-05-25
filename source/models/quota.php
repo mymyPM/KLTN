@@ -18,5 +18,10 @@ class Quota{
         $sql = "SELECT ID FROM quota";
         return $this->da->NumRows($sql);
     }
-
+    function createQuota($year,$time)
+    {
+        $sql = "INSERT INTO quota(Year,Time_quota) 
+                VALUES ($year,$time)";
+        return $this->da->ExecuteQuery($sql);
+    }
 }
