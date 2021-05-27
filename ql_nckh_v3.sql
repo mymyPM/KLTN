@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 15, 2021 lúc 02:01 PM
--- Phiên bản máy phục vụ: 10.4.18-MariaDB
--- Phiên bản PHP: 8.0.3
+-- Thời gian đã tạo: Th5 27, 2021 lúc 11:22 AM
+-- Phiên bản máy phục vụ: 10.4.19-MariaDB
+-- Phiên bản PHP: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,56 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `admin`
---
-
-CREATE TABLE `admin` (
-  `ID` int(11) NOT NULL,
-  `GroupID` int(11) NOT NULL,
-  `Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Username` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `admin`
---
-
-INSERT INTO `admin` (`ID`, `GroupID`, `Name`, `Username`, `Password`, `Img`) VALUES
-(1, 1, 'Phan Ngoc My', 'ngocmyy.phan@gmail.com', '17ccdf2bff481f9eab342202cc80801e', ''),
-(2, 2, 'My', 'My@gmail.com', '6864f389d9876436bc8778ff071d1b6c', ''),
-(3, 1, 'Hoàng Thiên', 'thienis.iuh@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 'my3.jpg'),
-(4, 2, 'Thiên', 'Thien@iuh.com', 'c4ca4238a0b923820dcc509a6f75849b', '39.jpg'),
-(12, 2, 'A', 'a@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', ''),
-(13, 2, 'B', 'aad@gmail.com', 'c81e728d9d4c2f636f067f89cc14862c', ''),
-(14, 2, 'C', 'E@gmail.com', 'eccbc87e4b5ce2fe28308fd9f2a7baf3', ''),
-(15, 2, 'A', 'a@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', ''),
-(16, 2, 'B', 'aad@gmail.com', 'c81e728d9d4c2f636f067f89cc14862c', ''),
-(17, 2, 'C', 'E@gmail.com', 'eccbc87e4b5ce2fe28308fd9f2a7baf3', ''),
-(18, 2, 'A', 'a@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', ''),
-(19, 2, 'B', 'aad@gmail.com', 'c81e728d9d4c2f636f067f89cc14862c', '1.jpg'),
-(20, 2, 'C', 'E@gmail.com', 'eccbc87e4b5ce2fe28308fd9f2a7baf3', ''),
-(21, 2, 'A', 'a@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', ''),
-(25, 2, 'TestGV', 'gvtest@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 'my3.jpg'),
-(26, 2, 'Phan Ngọc My', 'my.phanngoc@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', ''),
-(28, 1, 'Thien', 'thien@gmail.com', 'c81e728d9d4c2f636f067f89cc14862c', '39.jpg'),
-(29, 2, 'Test GV', 'gv@gmail.com', '202cb962ac59075b964b07152d234b70', '5.png');
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `approved`
 --
 
 CREATE TABLE `approved` (
   `ID` int(11) NOT NULL,
-  `LectureID` int(11) NOT NULL,
+  `LecturerID` int(11) NOT NULL,
   `ExemptionID` int(11) NOT NULL,
-  `Status` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Start` datetime NOT NULL,
-  `End` datetime NOT NULL
+  `Status` int(11) DEFAULT NULL,
+  `AdminID` int(11) DEFAULT NULL,
+  `Updated_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `approved`
+--
+
+INSERT INTO `approved` (`ID`, `LecturerID`, `ExemptionID`, `Status`, `AdminID`, `Updated_at`) VALUES
+(1, 4, 2, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -83,9 +51,9 @@ CREATE TABLE `approved` (
 
 CREATE TABLE `classify` (
   `ID` int(11) NOT NULL,
-  `Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `Time_norms` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `classify`
@@ -103,9 +71,9 @@ INSERT INTO `classify` (`ID`, `Name`, `Time_norms`) VALUES
 
 CREATE TABLE `department` (
   `ID` int(11) NOT NULL,
-  `Name` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Description` text COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `Name` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `department`
@@ -123,23 +91,17 @@ INSERT INTO `department` (`ID`, `Name`, `Description`) VALUES
 
 CREATE TABLE `exemption` (
   `ID` int(11) NOT NULL,
-  `LectureID` int(11) DEFAULT NULL,
   `Reason` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `AdminID` int(11) DEFAULT NULL,
-  `Reduction_time` int(11) NOT NULL,
-  `Reason_ID` int(11) DEFAULT NULL
+  `Reduction_time` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `exemption`
 --
 
-INSERT INTO `exemption` (`ID`, `LectureID`, `Reason`, `AdminID`, `Reduction_time`, `Reason_ID`) VALUES
-(3, NULL, 'Giảng viên mới, năm thứ nhất', NULL, 194, NULL),
-(4, NULL, 'Giảng viên mới, năm thứ hai', NULL, 271, NULL),
-(5, NULL, 'Trưởng khoa', NULL, 271, NULL),
-(6, NULL, 'Bí thư đoàn khoa Hóa', NULL, 150, NULL),
-(7, NULL, 'tapSu', NULL, 100, NULL);
+INSERT INTO `exemption` (`ID`, `Reason`, `Reduction_time`) VALUES
+(1, 'Giảng viên mới, năm thứ nhất', 194),
+(2, 'Trưởng khoa', 271);
 
 -- --------------------------------------------------------
 
@@ -149,12 +111,12 @@ INSERT INTO `exemption` (`ID`, `LectureID`, `Reason`, `AdminID`, `Reduction_time
 
 CREATE TABLE `exemption_type` (
   `ID` int(11) NOT NULL,
-  `Name` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description` text COLLATE utf8_unicode_ci NOT NULL,
   `Ratio` float NOT NULL,
-  `reduce_type` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `time_application` text COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `reduce_type` text COLLATE utf8_unicode_ci NOT NULL,
+  `time_application` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `exemption_type`
@@ -172,8 +134,8 @@ INSERT INTO `exemption_type` (`ID`, `Name`, `Description`, `Ratio`, `reduce_type
 
 CREATE TABLE `groups` (
   `ID` int(11) NOT NULL,
-  `GroupName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `GroupName` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `groups`
@@ -186,41 +148,16 @@ INSERT INTO `groups` (`ID`, `GroupName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `lecturers`
---
-
-CREATE TABLE `lecturers` (
-  `ID` int(11) NOT NULL,
-  `Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Birthday` date DEFAULT NULL,
-  `Phone` varchar(11) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ClassifyID` int(11) NOT NULL,
-  `Time` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `lecturers`
---
-
-INSERT INTO `lecturers` (`ID`, `Name`, `Birthday`, `Phone`, `Email`, `Address`, `ClassifyID`, `Time`) VALUES
-(2, 'Giảng Viên Test', '1990-01-01', '0123456789', 'giangvientest@gmail.com', 'Lê Lợi, P3, Gò Vấp, TP.HCM', 1, 0),
-(3, 'Giảng Viên 2', '1985-12-01', '0123456788', 'giangvien2@gmail.com', 'Lê Lợi, P3, Gò Vấp, TP.HCM', 2, 100);
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `plan`
 --
 
 CREATE TABLE `plan` (
   `ID` int(11) NOT NULL,
-  `Name` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description` text COLLATE utf8_unicode_ci NOT NULL,
   `Year` int(4) NOT NULL,
   `Times` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `plan`
@@ -240,7 +177,7 @@ CREATE TABLE `quota` (
   `ID` int(11) NOT NULL,
   `Year` int(5) NOT NULL,
   `Time_quota` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `quota`
@@ -258,9 +195,9 @@ INSERT INTO `quota` (`ID`, `Year`, `Time_quota`) VALUES
 
 CREATE TABLE `reason` (
   `ID` int(11) NOT NULL,
-  `Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `Time_norms` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -272,9 +209,9 @@ CREATE TABLE `report` (
   `ID` int(11) NOT NULL,
   `LectureID` int(11) NOT NULL,
   `AdminID` int(11) NOT NULL,
-  `Rating` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Content` text COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `Rating` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Content` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -284,9 +221,9 @@ CREATE TABLE `report` (
 
 CREATE TABLE `role` (
   `ID` int(11) NOT NULL,
-  `Name` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Description` text COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `Name` text COLLATE utf8_unicode_ci NOT NULL,
+  `Description` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `role`
@@ -305,11 +242,11 @@ INSERT INTO `role` (`ID`, `Name`, `Description`) VALUES
 CREATE TABLE `scientific_research` (
   `ID` int(11) NOT NULL,
   `LectureID` int(11) DEFAULT NULL,
-  `Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `Time` int(11) NOT NULL,
-  `Expense` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Proof` text COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `Expense` text COLLATE utf8_unicode_ci NOT NULL,
+  `Proof` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `scientific_research`
@@ -319,24 +256,46 @@ INSERT INTO `scientific_research` (`ID`, `LectureID`, `Name`, `Time`, `Expense`,
 (2, NULL, 'Đề tài cấp Nhà nước', 3000, 'Theo hợp đồng. Nguồn kinh phí từ cơ quan quản lý đề tài', 'Hợp đồng. Biên bản nghiệm thu: đề tài đạt từ trung bình trở lên. Bản thanh lý hợp đồng.'),
 (3, NULL, 'Bài đăng tạp chí ISI, hoặc đạt Scopus Q1, A, A* thuộc ABDC', 600, 'Theo quy chế chi tiêu nội bộ', 'Bài đăng trên Tạp chí hoặc Thư chấp nhận của tạp chí');
 
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `user`
+--
+
+CREATE TABLE `user` (
+  `ID` int(11) NOT NULL,
+  `GroupID` int(11) NOT NULL,
+  `Username` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Phone` varchar(11) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Birthday` date DEFAULT NULL,
+  `Address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Img` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`ID`, `GroupID`, `Username`, `Password`, `Name`, `Email`, `Phone`, `Birthday`, `Address`, `Img`) VALUES
+(1, 1, 'thienis.iuh@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 'Hoàng Thiên', NULL, NULL, NULL, NULL, NULL),
+(2, 1, 'ngocmyy.phan@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'Phan Ngọc My', NULL, NULL, NULL, NULL, NULL),
+(3, 2, 'Thien@iuh.com', 'c4ca4238a0b923820dcc509a6f75849b', 'Thiên', NULL, NULL, NULL, NULL, NULL),
+(4, 2, 'My@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'My', NULL, NULL, NULL, NULL, NULL);
+
 --
 -- Chỉ mục cho các bảng đã đổ
 --
-
---
--- Chỉ mục cho bảng `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `GroupID` (`GroupID`);
 
 --
 -- Chỉ mục cho bảng `approved`
 --
 ALTER TABLE `approved`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `LectureID` (`LectureID`),
-  ADD KEY `ExemptionID` (`ExemptionID`);
+  ADD KEY `fk_exemption` (`ExemptionID`),
+  ADD KEY `fk_lec` (`LecturerID`);
 
 --
 -- Chỉ mục cho bảng `classify`
@@ -354,10 +313,7 @@ ALTER TABLE `department`
 -- Chỉ mục cho bảng `exemption`
 --
 ALTER TABLE `exemption`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `LectureID` (`LectureID`),
-  ADD KEY `AdminID` (`AdminID`),
-  ADD KEY `Reason_ID` (`Reason_ID`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Chỉ mục cho bảng `exemption_type`
@@ -370,13 +326,6 @@ ALTER TABLE `exemption_type`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`ID`);
-
---
--- Chỉ mục cho bảng `lecturers`
---
-ALTER TABLE `lecturers`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `ClassifyID` (`ClassifyID`);
 
 --
 -- Chỉ mục cho bảng `plan`
@@ -418,20 +367,21 @@ ALTER TABLE `scientific_research`
   ADD KEY `LectureID` (`LectureID`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- Chỉ mục cho bảng `user`
 --
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `fk_group` (`GroupID`);
 
 --
--- AUTO_INCREMENT cho bảng `admin`
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
-ALTER TABLE `admin`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `approved`
 --
 ALTER TABLE `approved`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `classify`
@@ -449,7 +399,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT cho bảng `exemption`
 --
 ALTER TABLE `exemption`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `exemption_type`
@@ -462,12 +412,6 @@ ALTER TABLE `exemption_type`
 --
 ALTER TABLE `groups`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT cho bảng `lecturers`
---
-ALTER TABLE `lecturers`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `plan`
@@ -506,35 +450,22 @@ ALTER TABLE `scientific_research`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- AUTO_INCREMENT cho bảng `user`
 --
+ALTER TABLE `user`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Các ràng buộc cho bảng `admin`
+-- Các ràng buộc cho các bảng đã đổ
 --
-ALTER TABLE `admin`
-  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`GroupID`) REFERENCES `groups` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `approved`
 --
 ALTER TABLE `approved`
-  ADD CONSTRAINT `approved_ibfk_1` FOREIGN KEY (`LectureID`) REFERENCES `lecturers` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `approved_ibfk_2` FOREIGN KEY (`ExemptionID`) REFERENCES `exemption` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Các ràng buộc cho bảng `exemption`
---
-ALTER TABLE `exemption`
-  ADD CONSTRAINT `exemption_ibfk_1` FOREIGN KEY (`LectureID`) REFERENCES `lecturers` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `exemption_ibfk_2` FOREIGN KEY (`Reason_ID`) REFERENCES `reason` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `exemption_ibfk_3` FOREIGN KEY (`AdminID`) REFERENCES `admin` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Các ràng buộc cho bảng `lecturers`
---
-ALTER TABLE `lecturers`
-  ADD CONSTRAINT `lecturers_ibfk_1` FOREIGN KEY (`ClassifyID`) REFERENCES `classify` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_exemption` FOREIGN KEY (`ExemptionID`) REFERENCES `exemption` (`ID`),
+  ADD CONSTRAINT `fk_lec` FOREIGN KEY (`LecturerID`) REFERENCES `user` (`ID`),
+  ADD CONSTRAINT `fk_lecture` FOREIGN KEY (`LecturerID`) REFERENCES `admin` (`ID`);
 
 --
 -- Các ràng buộc cho bảng `report`
@@ -548,6 +479,12 @@ ALTER TABLE `report`
 --
 ALTER TABLE `scientific_research`
   ADD CONSTRAINT `scientific_research_ibfk_1` FOREIGN KEY (`LectureID`) REFERENCES `lecturers` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `fk_group` FOREIGN KEY (`GroupID`) REFERENCES `groups` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
