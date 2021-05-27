@@ -1,15 +1,22 @@
 <?php
-    include_once("source/views/request/exemption.php");
-    include_once("source/models/exemption.php");
+include_once("source/views/request/exemption.php");
+include_once("source/models/exemption.php");
     $exemption = new Exemption();
+if(isset($_POST["btnExemption"]))
+{
+    $lecturer = $_SESSION["userID"];
     $name = $_POST["txtLoai"];
-    $result = $exemption->getExemptionByName($name);
+    $m = $exemption->getIdExemptiontypeByName($name);
+    $exemption_type = $m["ID"];
+    $result = $exemption->addExemption($lecturer,$exemption_type);
+    echo var_dump($lecturer,$exemption_type);
     if($result)
     {
-        return $name;
+        echo"<script>alert('Add request successfully!!!')</script>";
     }
     else
     {
-        return 1;
+        echo"<script>alert('Error')</script>";
     }
+}
 ?>
