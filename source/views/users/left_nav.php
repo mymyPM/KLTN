@@ -28,11 +28,12 @@
                 </a>
               </li>
               <li class="treeview">
-                <a href="pesonal.php?mod=request&act=report">
+                <a href="pesonal.php?mod=request&act=add_scientific_research">
                 <i class="fa fa-pie-chart"></i>
-                <span>My report</span>
+                <span>Kê khai hoạt động NCKH</span>
                 </a>
               </li>
+<<<<<<< HEAD
               <li class="treeview">
                 <a href="pesonal.php?mod=request&act=search-form">
                 <i class="fa fa-pie-chart"></i>
@@ -57,6 +58,8 @@
                   <li><a href="blank-page.html"><i class="fa fa-angle-right"></i> Blank Page</a></li>
                 </ul>
               </li>
+=======
+>>>>>>> 5100ffea83511f9c73b9e729f22ea32badb06d6f
               
             </ul>
           </div>

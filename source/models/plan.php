@@ -1,27 +1,28 @@
 <?php
 include_once("DataProvider.php");
-class Quota{
+class Plan{
     private $da;
     public function __construct(){
         $this->da = new DataProvider();
     }
     
-    function getQuota()
+    function getPlan()
     {
-        $sql = "SELECT ID, Year, Time_quota
-                FROM quota";
+        $sql = "SELECT ID, Name, Description, Year, `Times`
+                FROM plan";
         return $this->da->FetchAll($sql);
     }
 
     function countAccount()
     {
-        $sql = "SELECT ID FROM quota";
+        $sql = "SELECT ID FROM plan";
         return $this->da->NumRows($sql);
     }
-    function createQuota($year,$time)
+    function createPlan($name,$desc,$year,$time)
     {
-        $sql = "INSERT INTO quota(Year,Time_quota) 
-                VALUES ($year,$time)";
+        $sql = "INSERT INTO plan(Name,Description,Year,Times)
+                VALUES ('$name','$desc',$year,$time)";
         return $this->da->ExecuteQuery($sql);
     }
+
 }
