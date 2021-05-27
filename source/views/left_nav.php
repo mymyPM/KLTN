@@ -48,6 +48,19 @@
               <li class="treeview">
                 <a href="admin.php?mod=request&act=list_request">
                 <i class="fa fa-edit"></i> <span>Yêu cầu miễn giảm</span>
+                <?php
+                include_once("source/models/exemption.php");
+                $exemption = new Exemption();
+                $result = $exemption->getStatus();
+                if($result["Status"]==0)
+                {
+                    echo "<span class='label label-primary pull-right'>";
+                    echo $result["count_status"];
+                    echo "</span>";
+                }
+                
+                ?>
+                
                 </a>
               </li>
               <li class="treeview">

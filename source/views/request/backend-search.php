@@ -28,7 +28,7 @@ if(isset($_REQUEST["term"])){
                 while($row = $result->fetch_array(MYSQLI_ASSOC)){
                     //echo "<p>" . $row["Reduction_time"] . "</p>";
                     
-                    echo "<input type='text' class='form-control1' id='txtReduction' placeholder='Default Input' value=";
+                    echo "<input type='text' class='form-control1' id='txtReduction' readonly placeholder='Default Input' value=";
                     echo $row["Reduction_time"];
                     echo ">";
                     echo "<div>";

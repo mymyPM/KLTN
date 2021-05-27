@@ -1,6 +1,6 @@
 
 <?php
-error_reporting(0);
+//error_reporting(0);
 include_once("source/models/exemption.php");
 //include_once("source/views/request/backend-search.php");
 $exemption = new Exemption();
