@@ -12,7 +12,6 @@ $ds = $exemption->getExemption();
 		<div id="page-wrapper">
 			<div class="main-page">
             <div class="row">
-<<<<<<< HEAD
 						<h3 class="title1">Kê khai miễn giảm :
                             <div style="float:right"><a href="pesonal.php?mod=request&act=exemption"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a></div>
                         </h3>
@@ -49,16 +48,6 @@ $(document).ready(function(){
 });
 </script>
 								<div class=search-box>
-=======
-						<h3 class="title1">Kê khai miễn giảm:
-                            <div style="float:right" hidden><a href="pesonal.php?mod=request&act=exemption&id=<?php echo $row["ID"]; ?>"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a></div>
-                        </h3>
-						<div class="form-three widget-shadow">
-							<form class="form-horizontal" action="pesonal.php?mod=request&act=exemption&id=<?php echo $id?>" method="post">
-								<div class="form-group">
-									<label for="selector1" class="col-sm-2 control-label">Loại miễn giảm:</label>
-									<div class="col-sm-8">
->>>>>>> 5100ffea83511f9c73b9e729f22ea32badb06d6f
 									<select name="txtLoai" id="txtLoai" class="form-control1" >
 									<option selected disabled hidden value="">Chọn loại miễn giảm</option>
 									<?php
@@ -70,7 +59,6 @@ $(document).ready(function(){
             							echo "</option>";					
 									}																
 									?>
-<<<<<<< HEAD
 									</select>
 									
 									<div class="result" id="a" style="margin-top:10px;"><input type="text" class="form-control1" id="focusedinput" placeholder="" value=""></div>	
@@ -82,12 +70,6 @@ $(document).ready(function(){
 								</div>
 							
 								
-=======
-										<input type="text" class="form-control1" id="focusedinput" placeholder="Default Input" value="<?php echo $n  ?>">
-									</div>
-								</div>                                 
-                                <input type="submit" value="Submit" name="btnExemption" class="btn btn-default" class="col-sm-2 control-label">
->>>>>>> 5100ffea83511f9c73b9e729f22ea32badb06d6f
 								
 								
                                 

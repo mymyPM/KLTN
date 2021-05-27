@@ -8,7 +8,7 @@
                     
 					
 					<div class="bs-example widget-shadow" data-example-id="hoverable-table"> 
-						<h4>Danh sách yêu cầu:</h4>
+						<h4>Danh sách yêu cầu đã duyệt:</h4>
 						<table class="table table-hover"> 
                             <thead> 
                                 <tr> 
@@ -17,7 +17,6 @@
                                     <th>Loại miễn giảm</th> 
                                     <th>Số giờ được giảm</th>
                                     <th>Action</th>
-                                    
                                 </tr> 
                             </thead> 
                             <tbody> 
@@ -42,7 +41,6 @@
                                         echo $row["Reduction_time"];
                                         echo "</td>";
                                         echo "<td>
-                                        <a href='#'><i class=\"fa fa-check\" aria-hidden=\"true\"></i></a>
                                         <a  href='#'><i class=\"fa fa-times\" aria-hidden=\"true\" style=\"margin-left:10px\"></i></a>
                                     </td>"; 
                                         echo "</tr>";
@@ -55,4 +53,3 @@
 				</div>
 			</div>
 		</div>
-		

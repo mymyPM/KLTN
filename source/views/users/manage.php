@@ -15,7 +15,6 @@
                                     <th>Birthday</th> 
                                     <th>Phone</th>
                                     <th>Email</th>
-                                    <th>Classify</th> 
                                 </tr> 
                             </thead> 
                             <tbody>
@@ -37,9 +36,6 @@
                                 echo "</td>"; 
                                 echo "<td>";
                                 echo $row["Email"];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row["classifyName"];
                                 echo "</td>";                                 
                                 echo "</tr>";
                             }
@@ -52,4 +48,3 @@
 				</div>
 			</div>
 		</div>
-		
