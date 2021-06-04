@@ -15,6 +15,7 @@
                                     <th>Birthday</th> 
                                     <th>Phone</th>
                                     <th>Email</th>
+                                    <th>Action</th>
                                 </tr> 
                             </thead> 
                             <tbody>
@@ -36,7 +37,10 @@
                                 echo "</td>"; 
                                 echo "<td>";
                                 echo $row["Email"];
-                                echo "</td>";                                
+                                echo "</td>";
+                                echo "<td>";
+                                    echo "<a href=\"\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></a>";
+                                echo "</td>";                          
                                 echo "</tr>";
                             }
                             ?> 

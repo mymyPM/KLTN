@@ -2,9 +2,9 @@
                 <div id="page-wrapper">
 			<div class="main-page">
 				<div class="tables">
-                    <h2 class="title1">Quản lý account
+                    <h2 class="title1">Quản lý tài khoản
                     <div style="float:right">
-                    <a href="admin.php?mod=users&act=add_account"><i class="fa fa-user-plus" aria-hidden="true">Add new account</i></a>
+                    <a href="admin.php?mod=users&act=add_account"><i class="fa fa-user-plus" aria-hidden="true">Thêm tài khoản mới</i></a>
                     </div>
                     </h2>
                     
@@ -12,7 +12,7 @@
                     
 					
 					<div class="bs-example widget-shadow" data-example-id="hoverable-table"> 
-						<h4>Danh sách account:</h4>
+						<h4>Danh sách tài khoản:</h4>
 						<table class="table table-hover"> 
                             <thead> 
                                 <tr> 
@@ -21,7 +21,7 @@
                                     <th>Username</th> 
                                     <th>Password</th>
                                     <th>Authorization</th>
-                                    <th>Thao tác</th>
+                                    <th>Action</th>
                                     
                                 </tr> 
                             </thead> 

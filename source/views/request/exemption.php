@@ -13,7 +13,7 @@ $ds = $exemption->getExemption();
 			<div class="main-page">
             <div class="row">
 						<h3 class="title1">Kê khai miễn giảm :
-                            <div style="float:right"><a href="pesonal.php?mod=request&act=exemption"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a></div>
+                            <div style="float:right"><a href="pesonal.php?mod=request&act=exemption"></a></div>
                         </h3>
 						<div class="form-three widget-shadow">
 							<form class="form-horizontal" action="pesonal.php?mod=request&act=exemption" method="post">

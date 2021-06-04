@@ -17,7 +17,7 @@
             <ul class="sidebar-menu">
               <li class="header">MAIN NAVIGATION</li>
               <li class="treeview">
-                <a href="index.html">
+                <a href="pesonal.php">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
               </li>
@@ -32,32 +32,7 @@
                 <i class="fa fa-pie-chart"></i>
                 <span>Kê khai hoạt động NCKH</span>
                 </a>
-              </li>
-              <li class="treeview">
-                <a href="pesonal.php?mod=request&act=search-form">
-                <i class="fa fa-pie-chart"></i>
-                <span>Test</span>
-                </a>
-              </li>
-              <li class="treeview">
-			  
-              
-              
-              
-              <li class="treeview">
-                <a href="#">
-                <i class="fa fa-folder"></i> <span>Examples</span>
-                <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="login.html"><i class="fa fa-angle-right"></i> Login</a></li>
-                  <li><a href="signup.html"><i class="fa fa-angle-right"></i> Register</a></li>
-                  <li><a href="404.html"><i class="fa fa-angle-right"></i> 404 Error</a></li>
-                  <li><a href="500.html"><i class="fa fa-angle-right"></i> 500 Error</a></li>
-                  <li><a href="blank-page.html"><i class="fa fa-angle-right"></i> Blank Page</a></li>
-                </ul>
-              </li>
-              
+              </li>              
             </ul>
           </div>
           <!-- /.navbar-collapse -->
