@@ -42,5 +42,21 @@ class Exemption{
         $sql = "SELECT Status, COUNT(Status) AS count_status FROM approved WHERE Status=0";
         return $this->da->Fetch($sql);
     }
+    function getQuotaID($year)
+    {
+        $sql = "SELECT ID,Time_quota FROM quota WHERE Year=$year";
+        return $this->da->Fetch($sql);
+    }
+    function add($name,$desc,$formula,$quota_id,$reduction)
+    {
+        $sql = "INSERT INTO test(Name,Description,Formula,ID_quota,reduction) VALUES ('$name','$desc','$formula','$quota_id',$reduction)";
+        return $this->da->ExecuteQuery($sql);
+    }
+    function addTableExemption()
+    {
+        $sql = "INSERT INTO exemption(Reason,Reduction_time,ID_test) SELECT CONCAT(Name,',', Description) as reason,reduction,ID FROM test WHERE ID  NOT IN (SELECT ID_test FROM exemption)";
+        
+        return $this->da->ExecuteQuery($sql);
+    }
 }
 ?>

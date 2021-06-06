@@ -7,7 +7,11 @@
                     <a href="admin.php?mod=users&act=add_account"><i class="fa fa-user-plus" aria-hidden="true">Thêm tài khoản mới</i></a>
                     </div>
                     </h2>
-                    
+                    <script language="JavaScript" type="text/javascript">
+function checkDelete(){
+    return confirm('Are you sure?');
+}
+</script> 
 
                     
 					
@@ -48,7 +52,7 @@
                                 echo "</td>";
                                 echo "<td>
                                 <a href=\"admin.php?mod=users&act=edit&id=$row[ID]\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></a>
-                                <a href=\"admin.php?mod=users&act=delete&id=$row[ID]\" onclick=\"confirm(\"Are you sure?\")\"><i class=\"fa fa-trash\" aria-hidden=\"true\" style=\"margin-left:10px\"></i></a>
+                                <a href=\"admin.php?mod=users&act=delete&id=$row[ID]\" onclick=\"return checkDelete()\"><i class=\"fa fa-trash\" aria-hidden=\"true\" style=\"margin-left:10px\"></i></a>
                             </td>"; 
                                 echo "</tr>";
                             }

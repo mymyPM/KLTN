@@ -22,29 +22,40 @@
                                     
                                 </tr> 
                             </thead> 
-                            <tbody> 
-                                <tr> 
-                                    <th scope="row">1</th> 
-                                    <td>Mark</td> <td>Otto</td> 
-                                    <td>@mdo</td> 
-                                    <td>@mdo</td>
-                                    <td>
-                                        <a><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        <a><i class="fa fa-trash" aria-hidden="true" style="margin-left:10px"></i></a>
-                                    </td> 
-                                </tr> 
-                                <tr> 
-                                    <th scope="row">2</th> 
-                                    <td>Jacob</td> 
-                                    <td>Thornton</td> 
-                                    <td>@fat</td> 
-                                </tr> 
-                                <tr> 
-                                    <th scope="row">3</th> 
-                                    <td>Larry</td> 
-                                    <td>the Bird</td> 
-                                    <td>@twitter</td> 
-                                </tr> 
+                            <tbody>
+                            <?php 
+                            foreach($result as $key => $row)
+                            {
+                                echo "<tr>"; 
+                                    echo "<th scope=\"row\">";
+                                    echo $key+1;
+                                    echo "</th>"; 
+                                    echo "<td>";
+                                    echo $row["Reason"];
+                                    echo "</td>"; 
+                                    
+                                    if($row["Status"]==1)
+                                    {
+                                        echo "<td>Chấp nhận</td>";
+                                    }
+                                    else
+                                        if($row["Status"]==2)
+                                        {
+                                            echo "<td>Từ chối</td>";
+                                        }
+                                        else
+                                        if($row["Status"]==0)
+                                        {
+                                            echo "<td>Chưa duyệt</td>";
+                                        }
+                                 
+                                    echo "<td>@mdo</td>"; 
+                                    echo "<td>@mdo</td>";
+                                    
+                                echo "</tr>"; 
+                            } 
+                            
+                            ?>    
                             </tbody> 
                         </table>
 					</div>

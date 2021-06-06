@@ -2,21 +2,21 @@
                 <div id="page-wrapper">
 			<div class="main-page">
 				<div class="tables">
-                    <h2 class="title1">Quản lý yêu cầu xin miễn giảm</h2>
+                    <h2 class="title1">Quản lý hoạt động nghiên cứu khoa học</h2>
                     
 
                     
 					
 					<div class="bs-example widget-shadow" data-example-id="hoverable-table"> 
-						<h4>Danh sách yêu cầu:</h4>
+						<h4>Danh sách:</h4>
 						<table class="table table-hover"> 
                             <thead> 
                                 <tr> 
                                     <th>STT</th> 
                                     <th>Tên Giảng Viên</th> 
-                                    <th>Loại miễn giảm</th> 
-                                    <th>Số giờ được giảm</th>
-                                    <th>Action</th>
+                                    <th>Loại đề tài</th> 
+                                    <th>Tên đề tài</th>
+                                    <th>Thời gian hoạt đông NCKH</th>
                                     
                                 </tr> 
                             </thead> 
@@ -41,10 +41,15 @@
                                         echo "<td>";
                                         echo $row["Reduction_time"];
                                         echo "</td>";
-                                        echo "<td>
-                                        <a href='admin.php?mod=request&act=approve_request&id=$row[ID]'><i class=\"fa fa-check\" aria-hidden=\"true\"></i></a>
-                                        <a  href='admin.php?mod=request&act=reject_request&id=$row[ID]'><i class=\"fa fa-times\" aria-hidden=\"true\" style=\"margin-left:10px\"></i></a>
-                                    </td>"; 
+                                        if ($row["Status"]==1)
+                                        {
+                                            echo "<td>Aprrove</td>";
+                                        }
+                                        else
+                                            if($row["Status"]==2)
+                                            {
+                                                echo "<td>Reject</td>";
+                                            }
                                         echo "</tr>";
                                     }
                                 ?>

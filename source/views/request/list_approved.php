@@ -2,7 +2,7 @@
                 <div id="page-wrapper">
 			<div class="main-page">
 				<div class="tables">
-                    <h2 class="title1">Quản lý yêu cầu xin miễn giảm</h2>
+                    <h2 class="title1">Yêu cầu đã duyệt</h2>
                     
 
                     
@@ -16,7 +16,7 @@
                                     <th>Tên Giảng Viên</th> 
                                     <th>Loại miễn giảm</th> 
                                     <th>Số giờ được giảm</th>
-                                    <th>Action</th>
+                                    <th>Status</th>
                                     
                                 </tr> 
                             </thead> 
@@ -41,10 +41,15 @@
                                         echo "<td>";
                                         echo $row["Reduction_time"];
                                         echo "</td>";
-                                        echo "<td>
-                                        <a href='admin.php?mod=request&act=approve_request&id=$row[ID]'><i class=\"fa fa-check\" aria-hidden=\"true\"></i></a>
-                                        <a  href='admin.php?mod=request&act=reject_request&id=$row[ID]'><i class=\"fa fa-times\" aria-hidden=\"true\" style=\"margin-left:10px\"></i></a>
-                                    </td>"; 
+                                        if ($row["Status"]==1)
+                                        {
+                                            echo "<td>Aprrove</td>";
+                                        }
+                                        else
+                                            if($row["Status"]==2)
+                                            {
+                                                echo "<td>Reject</td>";
+                                            }
                                         echo "</tr>";
                                     }
                                 ?>

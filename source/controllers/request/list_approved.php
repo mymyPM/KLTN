@@ -7,7 +7,7 @@
     $findStart = Pages::findStart(MAX);
     $findPage = Pages::findPages($count,MAX);
 
-    $result = $lr->getList($findStart,MAX);
+    $result = $lr->listApproved($findStart,MAX);
     
-    include_once("source/views/request/list_request.php");
+    include_once("source/views/request/list_approved.php");
 ?>

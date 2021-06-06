@@ -28,11 +28,17 @@
                 </a>
               </li>
               <li class="treeview">
-                <a href="pesonal.php?mod=request&act=add_scientific_research">
+                <a href="pesonal.php?mod=lecturer&act=reseach">
                 <i class="fa fa-pie-chart"></i>
                 <span>Kê khai hoạt động NCKH</span>
                 </a>
-              </li>              
+              </li>
+              <li class="treeview">
+                <a href="pesonal.php?mod=request&act=report">
+                <i class="fa fa-pie-chart"></i>
+                <span>My report</span>
+                </a>
+              </li>               
             </ul>
           </div>
           <!-- /.navbar-collapse -->

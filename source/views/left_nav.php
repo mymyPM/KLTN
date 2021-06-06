@@ -52,24 +52,26 @@
                 include_once("source/models/exemption.php");
                 $exemption = new Exemption();
                 $result = $exemption->getStatus();
-                if($result["Status"]==0)
+                if(isset($result))       
                 {
+                  if($result["count_status"]!=0)
+                  {
                     echo "<span class='label label-primary pull-right'>";
                     echo $result["count_status"];
                     echo "</span>";
-                }
-                
+                  }                    
+                } 
                 ?>
                 
                 </a>
               </li>
               <li class="treeview">
-                <a href="#">
+                <a href="admin.php?mod=request&act=list_approved">
                 <i class="fa fa-table"></i> <span>Yêu cầu đã duyệt</span>
                 </a>
               </li>
               <li class="treeview">
-                <a href="#">
+                <a href="admin.php?mod=exemption&act=add_exemption">
                 <i class="fa fa-envelope"></i> <span>Quản lý vai trò</span>
                 </a>
               </li>
