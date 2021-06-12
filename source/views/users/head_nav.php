@@ -1,3 +1,9 @@
+<?php
+include_once("source/models/users.php");
+$user = new Users();
+$id = $_SESSION["userID"];
+$result = $user->getUserById($id);
+?>
 		<!-- header-starts -->
 		<div class="sticky-header header-section ">
 			<div class="header-left">
@@ -35,10 +41,10 @@
 						<li class="dropdown profile_details_drop">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<div class="profile_img">	
-									<span class="prfil-img"><img src="<?php echo $_SESSION["Img"]?>" width="50px" height="50px" alt=""> </span> 
+									<span class="prfil-img"><img src="<?php echo $result["Img"]?>" width="50px" height="50px" alt=""> </span> 
 									<div class="user-name">
 										<p>
-										<?php echo $_SESSION["Name"]?>
+										<?php echo $result["Name"]?>
 										</p>
 										<span>Lecturer</span>
 									</div>

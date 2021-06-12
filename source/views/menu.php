@@ -1,3 +1,8 @@
+<?php
+//echo var_dump($_SESSION["GroupID"],$_SESSION["username"],$_SESSION["userID"],$_SESSION["GroupID"],$_SESSION["Name"],$_SESSION["Img"]);
+
+             
+?>
 <body>
         <!-- Area page -->
         <div id="page">
@@ -121,11 +126,11 @@
                                         <?php 
     if(isset($_SESSION["userID"]))
         {
-        if ($_SESSION["GroupID"] === '1') 
+        if ($_SESSION["GroupID"] == '1') 
             {
                 echo "<li class=\"dropdown\"><a target=\"\" href=\"admin.php\" ><span class=\"menu-lbl\">Admin</span></a></li>";
             }
-        if($_SESSION["GroupID"]==='2')
+        if($_SESSION["GroupID"]=='2')
             {
                 echo "<li class=\"dropdown\"><a  target=\"\" href=\"pesonal.php\" ><span class=\"menu-lbl\">"?><?php echo $_SESSION["Name"]?><?php echo"</span></a></li>"; 
             }

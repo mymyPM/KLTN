@@ -31,7 +31,7 @@ class Users{
     }
     function getUserById($id)
     {
-        $sql = "SELECT * FROM user WHERE ID=$id";
+        $sql = "SELECT Name,Phone,Birthday,Address,Img FROM user WHERE ID=$id";
         return $this->da->Fetch($sql);
     }
     function countAccount()
@@ -45,21 +45,26 @@ class Users{
                 FROM user";
         return $this->da->FetchAll($sql);
     }
-    function updateUser($id,$g,$name,$username,$password,$img)
+    function updateUser($id,$g,$name,$username,$password)
     {
         $sql = "UPDATE user SET GroupID=$g,Name='$name',Username='$username',Password='$password',Img='$img'
                 WHERE ID=$id ";
         return $this->da->ExecuteQuery($sql);
     }
-    function deleteAccount($id)
+    function deleteAccount($id,$user_id)
     {
-        $sql = "DELETE FROM user WHERE ID=$id";
+        $sql = "DELETE FROM user WHERE (ID=$id) AND ID!=$user_id ";
         return $this->da->ExecuteQuery($sql);
     }
-    function updateInfomation($id,$name,$phone,$address,$birthday,$img)
+    function updateInfomation($id,$name,$phone,$address,$birthday)
     {
-        $sql = "UPDATE user SET Name='$name',Phone='$phone',Birthday='$birthday',Img='$img',Address='$address'
+        $sql = "UPDATE user SET Name='$name',Phone='$phone',Birthday='$birthday',Address='$address'
                 WHERE ID=$id";
+        return $this->da->ExecuteQuery($sql);
+    }
+    function updateImg($id,$img)
+    {
+        $sql = "UPDATE user SET Img='$img' WHERE ID=$id";
         return $this->da->ExecuteQuery($sql);
     }
 }

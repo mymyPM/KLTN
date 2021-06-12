@@ -61,7 +61,13 @@
                 <i class="fa fa-pie-chart"></i>
                 <span>Scientific report</span>
                 </a>
-              </li>           
+              </li>   
+              <li class="treeview">
+                <a href="pesonal.php?mod=users&act=profile">
+                <i class="fa fa-pie-chart"></i>
+                <span>My profile</span>
+                </a>
+              </li>        
             </ul>
           </div>
           <!-- /.navbar-collapse -->
