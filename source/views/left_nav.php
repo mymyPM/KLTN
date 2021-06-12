@@ -71,8 +71,8 @@
                 </a>
               </li>
               <li class="treeview">
-                <a href="admin.php?mod=exemption&act=add_exemption">
-                <i class="fa fa-envelope"></i> <span>Quản lý vai trò</span>
+                <a href="admin.php?mod=exemption&act=list_exemption">
+                <i class="fa fa-envelope"></i> <span>Quản lý loại miễn giảm</span>
                 </a>
               </li>
               <li class="treeview">
@@ -82,11 +82,11 @@
               </li>
               <li class="treeview">
                 <a href="admin.php?mod=request&act=exemption_type">
-                <i class="fa fa-folder"></i> <span>Quản lý loại miễn giảm</span>
+                <i class="fa fa-folder"></i> <span>Quản lý loại vai trò</span>
                 </a>
               </li>
               <li class="treeview">
-                <a href="admin.php?mod=users&act=account">
+                <a href="admin.php?mod=lecturer&act=list_reseach">
                 <i class="fa fa-pie-chart"></i>
                 <span>Quản lý hoạt động NCKH</span>
                 </a>

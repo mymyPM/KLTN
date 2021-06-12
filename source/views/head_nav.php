@@ -35,7 +35,7 @@
 						<li class="dropdown profile_details_drop">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<div class="profile_img">	
-									<span class="prfil-img"><img src="images/<?php echo $_SESSION["Img"];?>" width="50px" height="50px" alt=""> </span> 
+									<span class="prfil-img"><img src="<?php echo $_SESSION["Img"];?>" width="50px" height="50px" alt=""> </span> 
 									<div class="user-name">
 										<p>
 										<?php echo $_SESSION["Name"]?>

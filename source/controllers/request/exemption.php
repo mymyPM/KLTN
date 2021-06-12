@@ -8,8 +8,13 @@ if(isset($_POST["btnExemption"]))
     $name = $_POST["txtLoai"];
     $m = $exemption->getIdExemptiontypeByName($name);
     $exemption_type = $m["ID"];
-    $result = $exemption->addExemption($lecturer,$exemption_type);
-    echo var_dump($lecturer,$exemption_type);
+    $start = $m["Start"];
+    $end = $m["End"];
+    $plan = $exemption->getPlanId();
+    $plan_id = $plan["ID"];
+    $result = $exemption->addExemption($lecturer,$exemption_type,$start,$end,$plan_id);
+    //$add = $exemption->addPlan();
+    echo var_dump($lecturer,$exemption_type,$start,$end);
     if($result)
     {
         echo"<script>alert('Add request successfully!!!')</script>";

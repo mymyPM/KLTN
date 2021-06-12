@@ -129,10 +129,7 @@
             {
                 echo "<li class=\"dropdown\"><a  target=\"\" href=\"pesonal.php\" ><span class=\"menu-lbl\">"?><?php echo $_SESSION["Name"]?><?php echo"</span></a></li>"; 
             }
-        else
-            {                     
-                echo  "<li class=\"dropdown\"><a  target=\"\" href=\"index.php?mod=users&act=logout\" id=\"login\"><span class=\"menu-lbl\">Logout</span></a></li>";
-            }
+        
             
         }
     else

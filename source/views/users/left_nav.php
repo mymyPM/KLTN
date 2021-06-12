@@ -22,13 +22,30 @@
                 </a>
               </li>
 			  <li class="treeview">
-                <a href="pesonal.php?mod=request&act=exemption">
+        <?php
+              include_once("source/models/exemption.php");
+              $exemp = new Exemption();
+              $m = $exemp->getPlanId();
+              $id = $m["ID"];
+              if(isset($id))
+              {
+                echo "<a href=\"pesonal.php?mod=request&act=exemption\">";
+              }
+              else
+              {
+                echo "<a href=\"pesonal.php?mod=request&act=404\">";
+              }
+                ?>
+                
                 <i class="fa fa-laptop"></i>
                 <span>Kê khai miễn giảm</span>
                 </a>
               </li>
               <li class="treeview">
-                <a href="pesonal.php?mod=lecturer&act=reseach">
+              
+               
+              <a href="pesonal.php?mod=lecturer&act=reseach">
+                            
                 <i class="fa fa-pie-chart"></i>
                 <span>Kê khai hoạt động NCKH</span>
                 </a>
@@ -38,7 +55,13 @@
                 <i class="fa fa-pie-chart"></i>
                 <span>My report</span>
                 </a>
-              </li>               
+              </li>    
+              <li class="treeview">
+                <a href="pesonal.php?mod=lecturer&act=report_reseach">
+                <i class="fa fa-pie-chart"></i>
+                <span>Scientific report</span>
+                </a>
+              </li>           
             </ul>
           </div>
           <!-- /.navbar-collapse -->

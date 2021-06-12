@@ -7,6 +7,11 @@
 					
 					<div class="bs-example widget-shadow" data-example-id="hoverable-table"> 
 						<h4>Danh sách thành viên:</h4>
+                        <script language="JavaScript" type="text/javascript">
+function checkDelete(){
+    return confirm('Are you sure?');
+}
+</script> 
 						<table class="table table-hover"> 
                             <thead> 
                                 <tr> 
@@ -38,9 +43,10 @@
                                 echo "<td>";
                                 echo $row["Email"];
                                 echo "</td>";
-                                echo "<td>";
-                                    echo "<a href=\"\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></a>";
-                                echo "</td>";                          
+                                echo "<td>
+                                <a href=\"admin.php?mod=users&act=edit_info&id=$row[ID]\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></a>
+                                <a href=\"admin.php?mod=users&act=delete&id=$row[ID]\" onclick=\"return checkDelete()\"><i class=\"fa fa-trash\" aria-hidden=\"true\" style=\"margin-left:10px\"></i></a>
+                            </td>";                           
                                 echo "</tr>";
                             }
                             ?> 

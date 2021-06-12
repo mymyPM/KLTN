@@ -18,7 +18,7 @@ class Users{
     }
     function getUser($start,$end)
     {
-        $sql = "SELECT user.ID,`Name`,Username,`Password`,GroupName 
+        $sql = "SELECT user.ID,`Name`,Username,`Password`,GroupName,Birthday,Email,Phone,Address 
                 FROM user JOIN groups ON user.GroupID=groups.ID 
                 WHERE GroupID=groups.ID
                 limit $start,$end";
@@ -54,6 +54,12 @@ class Users{
     function deleteAccount($id)
     {
         $sql = "DELETE FROM user WHERE ID=$id";
+        return $this->da->ExecuteQuery($sql);
+    }
+    function updateInfomation($id,$name,$phone,$address,$birthday,$img)
+    {
+        $sql = "UPDATE user SET Name='$name',Phone='$phone',Birthday='$birthday',Img='$img',Address='$address'
+                WHERE ID=$id";
         return $this->da->ExecuteQuery($sql);
     }
 }

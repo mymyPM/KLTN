@@ -4,7 +4,7 @@ if(isset($_POST["btnLogin"]))
 {
     $username = $_POST["txtusername"];
     $password = $_POST["txtpassword"];
-    echo var_dump($username,$password);
+    //echo var_dump($username,$password);
     if($username!="" && $password!="")
     {
         include_once("source/models/users.php");

@@ -40,7 +40,7 @@
         }
         function listApproved()
         {
-            $sql = "SELECT A.ID, u.Name, E.Reason, E.Reduction_time,A.Status FROM `exemption` E
+            $sql = "SELECT A.ID, u.Name, E.Reason, E.Reduction_time,A.Status,E.Start,E.End FROM `exemption` E
             JOIN `approved` A  ON A.ExemptionID=E.ID
             JOIN user u ON A.LecturerID=u.ID 
             WHERE Status!=0";
@@ -48,10 +48,18 @@
         }
         function myReport($id)
         {
-            $sql = "SELECT A.ID, u.Name, E.Reason, E.Reduction_time,A.Status FROM `exemption` E
+            $sql = "SELECT A.ID, u.Name, E.Reason, E.Reduction_time,A.Status,E.Start,E.End FROM `exemption` E
             JOIN `approved` A  ON A.ExemptionID=E.ID
             JOIN user u ON A.LecturerID=u.ID 
             WHERE  A.LecturerID=$id";
             return $this->da->FetchAll($sql);
+        }
+        function sumTime($id)
+        {
+            $sql = "SELECT SUM(E.Reduction_time) as tongtg FROM `exemption` E
+            JOIN `approved` A  ON A.ExemptionID=E.ID
+            JOIN user u ON A.LecturerID=u.ID 
+            WHERE  A.LecturerID=$id AND A.Status=1";
+            return $this->da->Fetch($sql);
         }
 }

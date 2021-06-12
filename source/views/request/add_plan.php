@@ -23,6 +23,18 @@
 						</div>
 						<div class="clearfix"> 
 					</div>
+					<div class="sign-u">
+					<label>Ngày bắt đầu</label>
+								<input type="date" name="txtStart" placeholder="Ngày bắt đầu" required="">
+						</div>
+						<div class="clearfix"> 
+					</div>
+					<div class="sign-u">
+					<label>Ngày kết thúc</label>
+								<input type="date" name="txtEnd" placeholder="Ngày kết thúc" required="">
+						</div>
+						<div class="clearfix"> 
+					</div>
 					<div class="sub_home">
 							<input type="submit" value="Submit" name="btnRegister">
 						<div class="clearfix"> </div>

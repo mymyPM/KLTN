@@ -61,10 +61,15 @@ $(document).ready(function(){
 									?>
 									</select>
 									
-									<div class="result" id="a" style="margin-top:10px;"><input type="text" class="form-control1" id="focusedinput" placeholder="" value=""></div>	
-													
-									</div>
+									<div class="result" id="a" style="margin-top:10px;">
+										<input type="text" class="form-control1" id="focusedinput" placeholder="" value="">
+										<input type="text" style="margin-top:10px" class="form-control1" id="txtStart" placeholder="" value="">
+										<input type="text" style="margin-top:10px" class="form-control1" id="txtEnd" placeholder="" value="">
+									</div>	
 									
+													
+								</div>
+                    
 								</div>
 									
 								</div>

@@ -4,7 +4,7 @@
 				<div class="tables">
                     <h2 class="title1">My report
                     <div style="float:right">
-                    <a href="admin.php?mod=users&act=add_account"><i class="fa fa-download"></i></a>
+                    <a href=""><i class="fa fa-download"></i></a>
                     </div>
                     </h2>
                 
@@ -15,6 +15,7 @@
                                 <tr> 
                                     <th>ID</th> 
                                     <th>Reason</th> 
+                                    <th>Reduction_time</th>
                                     <th>Status</th> 
                                     <th>Start</th>
                                     <th>End</th>
@@ -33,7 +34,9 @@
                                     echo "<td>";
                                     echo $row["Reason"];
                                     echo "</td>"; 
-                                    
+                                    echo "<td>";
+                                    echo $row["Reduction_time"];
+                                    echo "</td>";
                                     if($row["Status"]==1)
                                     {
                                         echo "<td>Chấp nhận</td>";
@@ -49,8 +52,15 @@
                                             echo "<td>Chưa duyệt</td>";
                                         }
                                  
-                                    echo "<td>@mdo</td>"; 
-                                    echo "<td>@mdo</td>";
+                                        echo "<td>";
+                                        echo $row["Start"];
+                                        echo "</td>";
+                                        echo "<td>";
+                                        echo $row["End"];
+                                        echo "</td>";
+                                    
+                                        
+                            
                                     
                                 echo "</tr>"; 
                             } 
@@ -58,6 +68,8 @@
                             ?>    
                             </tbody> 
                         </table>
+                        
+                        <div>Tổng thời gian miễn giảm: <?php echo $tongthoigian?></div>
 					</div>
 					
 				</div>

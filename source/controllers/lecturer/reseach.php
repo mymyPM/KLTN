@@ -5,11 +5,15 @@ $scienti = $scien->getScientific();
 include_once("source/views/reseach/add_reseach.php");
 if(isset($_POST["btnSave"]))
 {
+    $id = $_SESSION["userID"];
     $class = $_POST["txtLoai"];
-    $name = $_POST["txtName"];
+    $topic = $scien->getgetScientificByName($class);
+    $topic_class = $topic["ID"];
+    $name = $_POST["txtNameTopic"];
     $time = $_POST["txtTime"];
-    $result = $scien->addReach($name,$class,$time);
-    
+    $tyle = $_POST["txtTyle"];
+    echo var_dump($name,$topic_class,$tyle);
+    $result = $scien->addReach($id,$name,$topic_class,$tyle);   
     if($result)
     {
         echo"<script>alert('Thêm thành công')</script>";

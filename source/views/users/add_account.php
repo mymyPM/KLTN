@@ -5,7 +5,7 @@
 				<h2 class="title1">THÊM TÀI KHOẢN MỚI</h2>
 				<div class="sign-up-row widget-shadow">
 					<h5>Thông tin tài khoản:</h5>
-				<form action="admin.php?mod=users&act=add_account" method="post">
+				<form action="admin.php?mod=users&act=add_account" method="post" enctype="multipart/form-data">
 					<div class="sign-u">
 								<input type="text" name="txtName" placeholder="Tên tài khoản" required="">
 						<div class="clearfix"> </div>
@@ -41,7 +41,7 @@
 						<div class="clearfix"> 
 					</div>
 					<div class="sign-u">
-								<input type="file" name="txtImg" placeholder="Chọn file hình ảnh" required="">
+								<input type="file" name="uploadFile" placeholder="Chọn file hình ảnh" required="">
 						<div class="clearfix"> </div>
 					</div>
 					<div class="sub_home">
