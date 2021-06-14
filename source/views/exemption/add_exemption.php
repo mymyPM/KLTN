@@ -10,10 +10,7 @@
 								<input type="text" name="txtName" placeholder="Tên loại miễn giảm" required="">
 						<div class="clearfix"> </div>
 					</div>
-					<div class="sign-u">
-								<input type="text" name="txtDesc" placeholder="Mô tả" required="">
-						<div class="clearfix"> </div>
-					</div>
+					
 					<div class="sign-u">
 								<input type="text" name="txtRatio" placeholder="Công thức" required="">
 						<div class="clearfix"> </div>

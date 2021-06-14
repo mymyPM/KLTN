@@ -10,15 +10,10 @@ class Exemption{
         $sql = "SELECT * FROM exemption";
         return $this->da->FetchAll($sql);
     }
-    function getExemp()
-    {
-        $sql = "SELECT * FROM test";
-        return $this->da->FetchAll($sql);
-    }
     function getExemptionById($id)
     {
         $sql = "SELECT * FROM exemption WHERE ID=$id";
-        return $this->da->ExecuteQuery($sql);
+        return $this->da->Fetch($sql);
     }
     function getExemptionByName($name)
     {
@@ -27,7 +22,7 @@ class Exemption{
     }
     function getIdExemptiontypeByName($name)
     {
-        $sql = "SELECT ID,Start,End FROM exemption WHERE Reason='".$name."'";
+        $sql = "SELECT ID,Start,End FROM exemption WHERE Name='".$name."'";
         return $this->da->Fetch($sql);
     }
     function getTime($name)
@@ -67,15 +62,26 @@ class Exemption{
         $sql = "SELECT ID,Time_quota FROM quota WHERE Year=$year";
         return $this->da->Fetch($sql);
     }
-    function add($name,$desc,$formula,$quota_id,$reduction,$start,$end)
+    function add($name,$formula,$quota_id,$reduction,$start,$end)
     {
-        $sql = "INSERT INTO test(Name,Description,Formula,ID_quota,reduction,Start,End) VALUES ('$name','$desc','$formula','$quota_id',$reduction,'$start','$end')";
+        $sql = "INSERT INTO exemption(Name,Formula,ID_quota,reduction,Start,End) VALUES ('$name','$formula','$quota_id',$reduction,'$start','$end')";
         return $this->da->ExecuteQuery($sql);
     }
-    function addTableExemption()
+    //function addTableExemption()
+    //{
+    //    $sql = "INSERT INTO exemption(Reason,Reduction_time,ID_test,Start,End) SELECT CONCAT(Name,',', Description) as reason,reduction,ID,Start,End FROM test WHERE ID  NOT IN (SELECT ID_test FROM exemption)";
+    //    
+    //    return $this->da->ExecuteQuery($sql);
+    //}
+    function updateExemption($id,$name,$formula,$quota_id,$reduction,$start,$end)
     {
-        $sql = "INSERT INTO exemption(Reason,Reduction_time,ID_test,Start,End) SELECT CONCAT(Name,',', Description) as reason,reduction,ID,Start,End FROM test WHERE ID  NOT IN (SELECT ID_test FROM exemption)";
-        
+        $sql = "UPDATE exemption SET Name='$name',Formula='$formula',ID_quota=$quota_id,
+        reduction='$reduction',Start='$start',End='$end' WHERE ID=$id ";
+        return $this->da->ExecuteQuery($sql);
+    }
+    function deleteExemp($id)
+    {
+        $sql = "DELETE FROM exemption WHERE ID=$id";
         return $this->da->ExecuteQuery($sql);
     }
 }

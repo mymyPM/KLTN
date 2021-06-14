@@ -39,7 +39,7 @@
                                         echo $row["Reason"];
                                         echo "</td>";
                                         echo "<td>";
-                                        echo $row["Reduction_time"];
+                                        echo $row["reduction"];
                                         echo "</td>";
                                         echo "<td>
                                         <a href='admin.php?mod=request&act=approve_request&id=$row[ID]'><i class=\"fa fa-check\" aria-hidden=\"true\"></i></a>

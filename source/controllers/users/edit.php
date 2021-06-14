@@ -6,7 +6,7 @@ if(isset($_POST["btnEdit"]))
     $name=$_POST["txtName"];
     $username=$_POST["txtEmail"];
     $password=$_POST["txtPassword"];
-    $img=$_POST["txtImg"];
+    //$img=$_POST["txtImg"];
     $authorization=$_POST["txtAuthor"];  
     echo var_dump($authorization);
     $id = $_GET["id"];  
@@ -21,7 +21,7 @@ if(isset($_POST["btnEdit"]))
     echo var_dump($g,$name);
     include_once("source/models/users.php");
     $user = new Users;
-    $result=$user->updateUser($id,$g,$name,$username,$password,$img);
+    $result=$user->updateUser($id,$g,$name,$username,$password);
 
     if($result)
     {

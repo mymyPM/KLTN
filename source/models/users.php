@@ -10,18 +10,34 @@ class Users{
         $sql = "SELECT * FROM user WHERE Username='".$username."' AND `Password` = md5('".$password."')";
         return $this->da->Fetch($sql);
     }
-    function createUser($name,$email,$g,$pass,$img)
+    function createUser($name1,$email,$g,$pass,$class,$depart)
     {
-        $sql = "INSERT INTO user(GroupID,`Name`,Username,`Password`,Img) 
-                VALUES ($g,'$name','$email',md5('$pass'),'$img')";
+        $sql = "INSERT INTO user(GroupID,`Name`,Username,`Password`,Img,Classify_id,Department_id) 
+                VALUES ($g,'$name1','$email',md5('$pass'),'upload/account.png',$class,$depart)";
         return $this->da->ExecuteQuery($sql);
     }
     function getUser($start,$end)
     {
-        $sql = "SELECT user.ID,`Name`,Username,`Password`,GroupName,Birthday,Email,Phone,Address 
+        $sql = "SELECT user.ID,`Name`,Username,`Password`,GroupName,Birthday,Phone,Address,Classify_id,Department_id 
                 FROM user JOIN groups ON user.GroupID=groups.ID 
                 WHERE GroupID=groups.ID
                 limit $start,$end";
+        return $this->da->FetchAll($sql);
+    }
+    function getClassifyById($id)
+    {
+        $sql = "SELECT Name as Name1 FROM classify WHERE ID=$id";
+        return $this->da->Fetch($sql);
+    }
+    function getDepartmentById($id)
+    {
+        $sql = "SELECT Name as Name2 FROM department WHERE ID=$id";
+        return $this->da->Fetch($sql);
+    }
+    function getUserFull()
+    {
+        $sql = "SELECT u.ID,Name, ClassName, DepartName, Birthday, Address, Phone
+            FROM department d JOIN user u ON d.ID=u.Department_id JOIN classify c ON u.Classify_id=c.ID";
         return $this->da->FetchAll($sql);
     }
     function getUserByName($name)
@@ -47,7 +63,7 @@ class Users{
     }
     function updateUser($id,$g,$name,$username,$password)
     {
-        $sql = "UPDATE user SET GroupID=$g,Name='$name',Username='$username',Password='$password',Img='$img'
+        $sql = "UPDATE user SET GroupID=$g,Name='$name',Username='$username',Password='$password'
                 WHERE ID=$id ";
         return $this->da->ExecuteQuery($sql);
     }
@@ -66,5 +82,16 @@ class Users{
     {
         $sql = "UPDATE user SET Img='$img' WHERE ID=$id";
         return $this->da->ExecuteQuery($sql);
+    }
+
+    function getClassify()
+    {
+        $sql = "SELECT ID ,ClassName as Name1 FROM classify";
+        return $this->da->FetchAll($sql);
+    }
+    function getDepartment()
+    {
+        $sql = "SELECT ID,DepartName as Name2 FROM department";
+        return $this->da->FetchAll($sql);
     }
 }

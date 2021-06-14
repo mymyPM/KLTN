@@ -4,7 +4,6 @@
 				<div class="tables">
                     <h2 class="title1">My report
                     <div style="float:right">
-                    <a href="admin.php?mod=users&act=add_account"><i class="fa fa-download"></i></a>
                     </div>
                     </h2>
                 
@@ -35,6 +34,22 @@
                                     echo "<td>";
                                     echo $row["Donggop"];
                                     echo "</td>";
+                                    echo "</td>";
+                                    if($row["Status"]==1)
+                                    {
+                                        echo "<td>Chấp nhận</td>";
+                                    }
+                                    else
+                                        if($row["Status"]==2)
+                                        {
+                                            echo "<td>Từ chối</td>";
+                                        }
+                                        else
+                                        if($row["Status"]==0)
+                                        {
+                                            echo "<td>Chưa duyệt</td>";
+                                        }
+                                    echo "<td>";
                                     
                                           
                                 echo "</tr>"; 
@@ -44,7 +59,7 @@
                             </tbody> 
                         </table>
                         
-                        
+                        <div>Tổng thời gian đóng góp NCKH: <?php echo $tongtgnckh?></div>
 					</div>
 					
 				</div>

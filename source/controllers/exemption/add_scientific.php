@@ -6,7 +6,7 @@ if(isset($_POST["btnSave"]))
     $time = $_POST["txtTime"];
     $money = $_POST["txtMoney"];
     $proof = $_POST["txtProof"];
-    //echo var_dump($loai);
+    //echo var_dump($loai,$time,$proof,$money);
     include_once("source/models/scientific_research.php");
     $scien = new Scientific();
     $result = $scien->addScientific($loai,$time,$proof,$money);

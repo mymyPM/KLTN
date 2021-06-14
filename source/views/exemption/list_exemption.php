@@ -15,7 +15,7 @@
                                 <tr> 
                                     <th>STT</th> 
                                     <th>Tên</th> 
-                                    <th>Mô tả</th>
+                                    
                                     <th>Công thức</th>
                                     <th>Start</th>
                                     <th>End</th>
@@ -37,9 +37,7 @@
                                         echo "<td>";
                                         echo $row["Name"];
                                         echo "</td>"; 
-                                        echo "<td>";
-                                        echo $row["Description"];
-                                        echo "</td>";
+                                        
                                         echo "<td>";
                                         echo $row["Formula"];
                                         echo "</td>";
@@ -50,8 +48,8 @@
                                         echo $row["End"];
                                         echo "</td>"; 
                                         echo "<td>
-                                        <a href='#'><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></a>
-                                        <a  href='#'><i class=\"fa fa-trash\" aria-hidden=\"true\" style=\"margin-left:10px\"></i></a>
+                                        <a href='admin.php?mod=exemption&act=edit_exemption&id=$row[ID]'><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></a>
+                                        <a  href='admin.php?mod=exemption&act=delete_exemption&id=$row[ID]'><i class=\"fa fa-trash\" aria-hidden=\"true\" style=\"margin-left:10px\"></i></a>
                                     </td>"; 
                                         echo "</tr>";
                                     }

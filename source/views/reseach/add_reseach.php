@@ -64,9 +64,9 @@ $(document).ready(function(){
 									<?php
 									foreach($ds as $row )
 									{
-										$id = $row["Name"];
+										$id = $row["Name_scien"];
             							echo "<option value='$id'>";
-            							echo $row['Name'];
+            							echo $row['Name_scien'];
             							echo "</option>";					
 									}																
 									?>
@@ -75,10 +75,7 @@ $(document).ready(function(){
 									<div class="result" id="a" style="margin-top:10px;">
 										<input type="text" class="form-control1" id="focusedinput" placeholder="" value="">
 										
-									</div>
-									
-									
-									
+									</div>									
 													
 								</div>
                     

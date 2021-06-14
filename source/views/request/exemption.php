@@ -53,9 +53,9 @@ $(document).ready(function(){
 									<?php
 									foreach($ds as $row )
 									{
-										$id = $row["Reason"];
+										$id = $row["Name"];
             							echo "<option value='$id'>";
-            							echo $row['Reason'];
+            							echo $row['Name'];
             							echo "</option>";					
 									}																
 									?>

@@ -12,6 +12,11 @@ class Quota{
                 FROM quota";
         return $this->da->FetchAll($sql);
     }
+    function getQuotaByYear($year)
+    {
+        $sql = "SELECT * FROM quota WHERE Year=$year";
+        return $this->da->Fetch($sql);
+    }
     function getQuotaById($id)
     {
         $sql = "SELECT * FROM quota WHERE ID=$id";

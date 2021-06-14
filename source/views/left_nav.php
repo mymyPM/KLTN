@@ -1,3 +1,6 @@
+<?php
+error_reporting('0');
+?>
 <body class="cbp-spmenu-push">
 	<div class="main-content">
 	<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
@@ -76,20 +79,54 @@
                 </a>
               </li>
               <li class="treeview">
-                <a href="#">
-                <i class="fa fa-folder"></i> <span>Quản lý đơn vị</span>
+                <a href="admin.php?mod=exemption&act=list_class">
+                <i class="fa fa-folder"></i> <span>Quản lý phân loại</span>
                 </a>
               </li>
               <li class="treeview">
-                <a href="admin.php?mod=request&act=exemption_type">
-                <i class="fa fa-folder"></i> <span>Quản lý loại vai trò</span>
+                <a href="admin.php?mod=exemption&act=list_depart">
+                <i class="fa fa-folder"></i> <span>Quản lý loại đơn vị</span>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="admin.php?mod=request&act=scientific">
+                <i class="fa fa-pie-chart"></i>
+                <span>Quản lý danh mục</span>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="admin.php?mod=request&act=list_research">
+                <i class="fa fa-pie-chart"></i>
+                <span>Quản lý hoạt động NCKH</span>
                 </a>
               </li>
               <li class="treeview">
                 <a href="admin.php?mod=lecturer&act=list_reseach">
                 <i class="fa fa-pie-chart"></i>
-                <span>Quản lý hoạt động NCKH</span>
+                <span>Duyệt hoạt động NCKH</span>
+                <?php
+                include_once("source/models/scientific_research.php");
+                $scien = new Scientific();
+                $result = $scien->getStatus();
+                if(isset($result))       
+                {
+                  if($result["count_status"]!=0)
+                  {
+                    echo "<span class='label label-primary pull-right'>";
+                    echo $result["count_status"];
+                    echo "</span>";
+                  }                    
+                }
+                ?>
                 </a>
+              </li>
+              <li class="treeview">
+                <a href="admin.php?mod=statistic&act=list_statistic">
+                <i class="fa fa-pie-chart"></i>
+                <span>Thống kê</span>
+                </a>
+              </li>
+                </ul>
               </li>
             </ul>
           </div>

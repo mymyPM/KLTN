@@ -5,11 +5,12 @@
 		include_once("source/models/users.php");
 		$user = new Users;
 		$result = $user->getUserById($id);
+		
 		?>
 		<div id="page-wrapper">
 			<div class="main-page">
             <div class="row">
-						<h3 class="title1">Sửa thông tin :
+						<h3 class="title1">Sửa thông tin : 
                             <div style="float:right"><a href="admin.php?mod=users&act=account"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a></div>
                         </h3>
 						<div class="form-three widget-shadow">
@@ -63,12 +64,7 @@
 									
 									</select></div>
 								</div>
-                                <div class="form-group"> 
-                                    <label for="exampleInputFile" class="col-sm-2 control-label">File input:</label> 
-                                    <input type="file" name="txtImg" class="col-sm-8" placeholder="choose file" ">
-								 
-                                    <p class="help-block">Load ảnh đại diện.</p> 
-                                </div> 
+                                
 								<input type="submit" value="Submit" name="btnEdit" class="btn btn-default" class="col-sm-2 control-label" style="background-color:#F2B33F">			
 							</form>
 						</div>

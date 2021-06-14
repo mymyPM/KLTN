@@ -9,7 +9,7 @@ if($mysqli === false){
  
 if(isset($_REQUEST["term"])){
     // Chuẩn bị câu lệnh SQL SELECT
-    $sql = "SELECT * FROM scientific_research WHERE Name LIKE ?";
+    $sql = "SELECT * FROM scientific_research WHERE Name_scien LIKE ?";
     
     if($stmt = $mysqli->prepare($sql)){
         // Liên kết biến đến câu lệnh đã chuẩn bị như là tham số

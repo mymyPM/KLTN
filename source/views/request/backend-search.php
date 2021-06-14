@@ -9,7 +9,7 @@ if($mysqli === false){
  
 if(isset($_REQUEST["term"])){
     // Chuẩn bị câu lệnh SQL SELECT
-    $sql = "SELECT * FROM exemption WHERE Reason LIKE ?";
+    $sql = "SELECT * FROM exemption WHERE Name LIKE ?";
     
     if($stmt = $mysqli->prepare($sql)){
         // Liên kết biến đến câu lệnh đã chuẩn bị như là tham số
@@ -29,18 +29,18 @@ if(isset($_REQUEST["term"])){
                     //echo "<p>" . $row["Reduction_time"] . "</p>";
                     
                     echo "<input type='text' class='form-control1' id='txtReduction' readonly placeholder='Default Input' value=";
-                    echo $row["Reduction_time"];
+                    echo $row["reduction"];
                     echo ">";
                     echo "<div>";
                     echo "<p class='help-block'>Số giờ miễn giảm</p>";
                     echo "</div>";
-                    echo "<input type='date' class='form-control1' id='txtStart' readonly placeholder='Default Input' value=";
+                    echo "<input type='date' class='form-control1' name='txtStart' readonly placeholder='Default Input' value=";
                     echo $row["Start"]; 
                     echo ">";
                     echo "<div>";
                     echo "<p class='help-block'>Ngày bắt đầu</p>";
                     echo "</div>";
-                    echo "<input type='date' class='form-control1' id='txtEnd' readonly placeholder='Default Input' value=";
+                    echo "<input type='date' class='form-control1' name='txtEnd' readonly placeholder='Default Input' value=";
                     echo $row["End"]; 
                     echo ">";
                     echo "<div>";

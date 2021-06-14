@@ -16,15 +16,20 @@ function checkDelete(){
                             <thead> 
                                 <tr> 
                                     <th>ID</th> 
-                                    <th>Name</th> 
+                                    <th>Name</th>
+                                    <th>Classify</th>
+                                    <th>Department</th> 
                                     <th>Birthday</th> 
                                     <th>Phone</th>
-                                    <th>Email</th>
+                                    
                                     <th>Action</th>
                                 </tr> 
                             </thead> 
                             <tbody>
                             <?php
+                            include_once("source/models/users.php");
+                            $user = new Users;
+                            $result = $user->getUserFull();
                             foreach($result as $key => $row)
                             {
                                 echo "<tr>"; 
@@ -33,6 +38,12 @@ function checkDelete(){
                                 echo "</th>"; 
                                 echo "<td>";
                                 echo $row["Name"];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row["ClassName"];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row["DepartName"];
                                 echo "</td>"; 
                                 echo "<td>";
                                 echo $row["Birthday"];
@@ -40,9 +51,7 @@ function checkDelete(){
                                 echo "<td>";
                                 echo $row["Phone"];
                                 echo "</td>"; 
-                                echo "<td>";
-                                echo $row["Email"];
-                                echo "</td>";
+                                
                                 echo "<td>
                                 <a href=\"admin.php?mod=users&act=edit_info&id=$row[ID]\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></a>
                                 <a href=\"admin.php?mod=users&act=delete&id=$row[ID]\" onclick=\"return checkDelete()\"><i class=\"fa fa-trash\" aria-hidden=\"true\" style=\"margin-left:10px\"></i></a>

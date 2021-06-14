@@ -35,7 +35,7 @@
                                     echo $row["Reason"];
                                     echo "</td>"; 
                                     echo "<td>";
-                                    echo $row["Reduction_time"];
+                                    echo $row["reduction"];
                                     echo "</td>";
                                     if($row["Status"]==1)
                                     {

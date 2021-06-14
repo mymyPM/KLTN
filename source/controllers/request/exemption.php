@@ -12,6 +12,7 @@ if(isset($_POST["btnExemption"]))
     $end = $m["End"];
     $plan = $exemption->getPlanId();
     $plan_id = $plan["ID"];
+    //echo var_dump($lecturer,$exemption_type,$start,$end,$plan_id);
     $result = $exemption->addExemption($lecturer,$exemption_type,$start,$end,$plan_id);
     //$add = $exemption->addPlan();
     echo var_dump($lecturer,$exemption_type,$start,$end);
